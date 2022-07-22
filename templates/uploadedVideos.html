@@ -1,0 +1,30 @@
+{% extends 'templates/template.html' %}
+{% block title %}Uploaded Videos{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Uploaded Videos</h1>
+        </div>
+    </div>
+    <div>
+        <div class="sizer">
+            {% for video in videos %}
+            <div class="container" style="border: 2px solid black; width:fit-content; margin: 2rem;">
+                <h4>
+                    Title: <h5>{{video.title}}</h5>
+                </h4>
+                <video class="embed-responsive embed-responsive-4by3" controls="controls" loop muted>
+                    <source src="{{video.video.url}}" type="video/mp4">
+                </video>
+                <h5>
+                   Description: <br> <p>{{video.description}}</p>
+                </h5>
+                <p>Uploaded at: {{video.date}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

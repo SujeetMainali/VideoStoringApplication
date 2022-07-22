@@ -1,0 +1,30 @@
+{% extends 'templates/template.html' %}
+{% block title %}Charges{% endblock %}
+{% block body %}
+     <div class="row">
+        <div class="col-md-12">
+            <h1>Charges</h1>
+        </div>
+     </div>
+     <form method="GET" action="/price">
+        
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">video Size(in MB)</label>
+          <input type="number" class="form-control" id="video_size" name="video_size">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">video Duration</label>
+          <input type="number" class="form-control" id="video_duration" name="video_duration">
+        </div>
+        <div>
+            <label for="exampleInputPassword1" class="form-label mb-3">video Type</label>
+            <select class="form-control mb-3" id="video_type">
+                <option>Select Video Type</option>
+                <option>mp4</option>
+                <option>mkv</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+
+      </form>
+{% endblock%}
